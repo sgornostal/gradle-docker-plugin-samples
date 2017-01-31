@@ -9,7 +9,6 @@ subprojects {
             maven {
                 url  "http://dl.bintray.com/sgornostal/gradle-plugins-repo"
             }
-            mavenLocal()
         }
         dependencies {
             classpath 'org.sgornostal:gradle-docker-plugin:1.1'
