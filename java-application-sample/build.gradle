@@ -1,0 +1,28 @@
+group 'org.sgornostal'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'docker'
+
+mainClassName = 'org.sgonostal.Main'
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+docker {
+    imageName = 'java-application-sample'
+    buildArgs = ['JAR_NAME': jar.archiveName]
+    files jar.archivePath
+    dependsOn build
+    run {
+        env 'ENV_VARIABLE=My Variable'
+    }
+}
+
+repositories {
+    mavenCentral()
+}

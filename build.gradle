@@ -1,0 +1,19 @@
+group 'org.sgornostal'
+version '1.0-SNAPSHOT'
+
+subprojects {
+
+    buildscript {
+        repositories {
+            jcenter()
+            maven {
+                url  "http://dl.bintray.com/sgornostal/gradle-plugins-repo"
+            }
+            mavenLocal()
+        }
+        dependencies {
+            classpath 'org.sgornostal:gradle-docker-plugin:1.1'
+        }
+    }
+}
+

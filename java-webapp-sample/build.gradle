@@ -1,0 +1,23 @@
+group 'org.sgornostal'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'docker'
+
+docker {
+    buildArgs = ['WAR_NAME': war.archiveName]
+    files war.archivePath
+    dependsOn war
+    run {
+        ports '8080:8080'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+}
