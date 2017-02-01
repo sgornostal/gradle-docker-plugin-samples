@@ -7,11 +7,11 @@ subprojects {
         repositories {
             jcenter()
             maven {
-                url  "http://dl.bintray.com/sgornostal/gradle-plugins-repo"
+                url "https://plugins.gradle.org/m2/"
             }
         }
         dependencies {
-            classpath 'org.sgornostal:gradle-docker-plugin:1.1'
+            classpath 'gradle.plugin.org.sgornostal:gradle-docker-plugin:1.1'
         }
     }
 }
