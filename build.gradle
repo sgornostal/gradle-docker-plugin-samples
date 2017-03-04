@@ -11,7 +11,7 @@ subprojects {
             }
         }
         dependencies {
-            classpath 'gradle.plugin.org.sgornostal:gradle-docker-plugin:1.1'
+            classpath 'gradle.plugin.org.sgornostal:gradle-docker-plugin:1.4'
         }
     }
 }
